@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -18,3 +17,6 @@ export default function RootLayout({
     </html>
   );
 }
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
