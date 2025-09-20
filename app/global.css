@@ -30,7 +30,6 @@ body {
   gap: 15px;
 }
 
-/* Перші 4 блоки - темно-коричневі */
 .card.dark-brown {
   background-color: #593E33;
   color: #fff;
@@ -39,7 +38,6 @@ body {
   width: 80%;
 }
 
-/* Великий блок коричнево-сірий */
 .card.gray-brown {
   background-color: #7E8480;
   color: #fff;
@@ -95,11 +93,10 @@ body {
 }
 
 .main-image {
-  width: 115%;       /* займає всю ширину контейнера */
-  height: 100%;      /* висота підлаштовується пропорційно */
- /* можна обмежити максимальну висоту */
+  width: 115%;  
+  height: 100%; 
   border-radius: 12px;
-  object-fit: cover; /* зберігає пропорції і обрізає зайве */
+  object-fit: cover;
   display: block;
   margin-left: -15%;
 }
@@ -114,7 +111,6 @@ img:hover {
   filter: brightness(1) blur(0);
 }
 
-/* Коло з картинкою */
 .circle-image {
   position: relative;
   display: flex;
@@ -146,13 +142,13 @@ img:hover {
 .circle-text {
   position: absolute;
   text-align: center;
-  color: #fff; /* робимо текст білим для контрасту */
+  color: #fff; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 30%;
-  background-color: rgba(0, 0, 0, 0.5); /* напівпрозорий чорний фон */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 8px 12px;
   border-radius: 8px;
 }
@@ -167,7 +163,6 @@ img:hover {
   margin: 0;
 }
 
-/* Нижні ряди */
 .bottom-blocks {
   display: flex;
   flex-direction: column;
