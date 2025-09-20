@@ -13,7 +13,7 @@ body {
 
 .title, .subtitle {
   text-align: center;
-  margin-bottom: 30px; /* чуть больше, чтобы заголовки отделялись */
+  margin-bottom: 30px;
 }
 
 .advantages {
@@ -21,7 +21,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: center;
-  margin-bottom: 60px; /* 🔥 больше отступ снизу */
+  margin-bottom: 60px;
 }
 
 .advantages-list {
@@ -30,25 +30,63 @@ body {
   gap: 15px;
 }
 
-.card {
-  padding: 15px;
+/* Перші 4 блоки - темно-коричневі */
+.card.dark-brown {
+  background-color: #593E33;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+/* Великий блок коричнево-сірий */
+.card.gray-brown {
+  background-color: #7E8480;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 80px 0;
+}
+
+.column-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.column-images img, .columnimage1 {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.card.brown {
-  background: #593E33;
-  color: #fff;
+.comments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 15px;
+  margin: 80px 0;
 }
 
-.card.gray {
-  background: #7E8480;
-  color: #fff;
-}
-
-.card.black {
+.comments .card.black {
   background: #1B1B1B;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 10px;
 }
 
 .icon {
@@ -57,9 +95,13 @@ body {
 }
 
 .main-image {
-  width: 100%;
-  height: 70%;
+  width: 115%;       /* займає всю ширину контейнера */
+  height: 100%;      /* висота підлаштовується пропорційно */
+ /* можна обмежити максимальну висоту */
   border-radius: 12px;
+  object-fit: cover; /* зберігає пропорції і обрізає зайве */
+  display: block;
+  margin-left: -15%;
 }
 
 img {
@@ -72,45 +114,14 @@ img:hover {
   filter: brightness(1) blur(0);
 }
 
-.two-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 80px 0; /* 🔥 большой отступ сверху и снизу */
-}
-
-.column-images {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.column-images img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.comments {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 15px;
-  margin: 80px 0; /* 🔥 отступы сверху и снизу для секции */
-}
-
-.comments .card {
-  font-size: 0.9rem;
-  padding: 12px;
-  border-radius: 10px;
-}
-
+/* Коло з картинкою */
 .circle-image {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 0; /* 🔥 больше пространства сверху и снизу */
-  height: 400px; /* немного больше высоты */
+  margin: 100px 0;
+  height: 400px;
 }
 
 .circle-image::before {
@@ -130,26 +141,64 @@ img:hover {
   object-fit: cover;
   position: relative;
   z-index: 1;
-  filter: brightness(0.9) blur(1px);
 }
 
 .circle-text {
   position: absolute;
   text-align: center;
-  color: white;
+  color: #fff; /* робимо текст білим для контрасту */
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.5); /* напівпрозорий чорний фон */
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
+.circle-text h3 {
+  font-size: 1rem;
+  margin: 0 0 6px 0;
+}
+
+.circle-text p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Нижні ряди */
 .bottom-blocks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 60px; /* 🔥 отступ сверху для блока внизу */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.bottom-blocks img {
-  width: 100%;
-  border-radius: 12px;
+.bottom-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardblacklast, .cardimg {
+  flex: 0 0 45%;
+  max-width: 45%;
+  min-height: 160px;
+  border-radius: 10px;
+}
+
+.cardblacklast {
+  background-color: #000;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardimg {
+  object-fit: cover;
+  height: 100%;
 }
